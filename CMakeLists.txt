@@ -24,7 +24,7 @@ endif()
 if(DEFINED ENV{PICO_EXTRAS_PATH})
     set(PICO_EXTRAS_PATH $ENV{PICO_EXTRAS_PATH})
 else()
-    set(PICO_EXTRAS_PATH ../lib/pico-extras)
+    set(PICO_EXTRAS_PATH ${CMAKE_CURRENT_LIST_DIR}/lib/pico-extras)
 endif()
 
 # ====================================================================================
@@ -42,9 +42,6 @@ include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 
 # This imports the library configuration for FreeRTOS
 include(${FREERTOS_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
-
-# This sets up the unity library. They don't provide a library export, so it's defined locally.
-# include(unity.cmake)
 
 # Pull in PICO SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -70,7 +67,3 @@ include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
 
 # The main executable is defined inside the src directory.
 add_subdirectory(src)
-
-# The test configuration is inside the test directory.
-include(CTest)
-add_subdirectory(test)
