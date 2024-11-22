@@ -8,6 +8,9 @@
 
 **ENABLE** : 0x00
 
+***
+***
+
 ### The following are the recorded power consumption measurements for various scenarios:
 
 ## Blinking LED using sleep_ms function
