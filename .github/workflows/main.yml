@@ -9,7 +9,6 @@ env:
   UNITY_PATH: /usr/local/share/pico/Unity
   OPENOCD_PATH: /usr/share/openocd
   PICO_TOOLCHAIN_PATH: /usr/bin
-  PICO_EXTRAS_PATH: /usr/local/share/pico/pico-extras
 
 jobs:
   build:
